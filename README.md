@@ -11,8 +11,7 @@ Projekt został napisany w języku Python przy użyciu dwóch głównych bibliot
 - OpenGL: Otwarte środowisko graficzne, które umożliwia renderowanie trójwymiarowych scen.
 
 # Instrukcje Uruchomienia
-- Zainstaluj wymagane biblioteki, wykonując poniższą komendę:
-'bash' pip install pygame PyOpenGL 'bash'
+- Zainstaluj wymagane biblioteki, wykonując poniższą komendę: pip install pygame PyOpenGL 
 - Pobierz projekt z tego repozytorium.
 - Uruchom program za pomocą terminala lub w dowolnym środowisku programistycznym, które obsługuje Python.
-* python main.py
+python main.py
