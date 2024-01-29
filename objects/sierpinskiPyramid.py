@@ -24,8 +24,14 @@ class SierpinskiPyramid:
         vertexC = (top[0]+size/2, top[1]-size*sqrt(6)/3,top[2]+size*sqrt(3)/6)
         self.makePyramid(vertexC, size, lvl-1)
 
-
-
     def draw(self, quadric):
         for f in self.pyramids:
             f.draw(quadric)
+
+
+
+
+
+
+
+

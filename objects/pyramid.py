@@ -1,8 +1,6 @@
 from OpenGL.GL import *
 from math import sqrt
-
-from OpenGL.raw.GLU import gluCylinder, gluDisk
-
+from OpenGL.raw.GLU import gluCylinder, gluDisk, gluQuadricTexture
 class Pyramid:
     edges = (
         (0, 1),
@@ -33,6 +31,7 @@ class Pyramid:
         self.radius = size * sqrt(6) / 3
         self.center = (top[0], top[1] - self.height, top[2])
 
+
     def draw(self, quadric):
         glTranslatef(self.center[0], self.center[1], self.center[2])
         glRotatef(-90, 1, 0, 0)
@@ -42,6 +41,7 @@ class Pyramid:
 
         glRotatef(90, 1, 0, 0)
         glTranslatef(-self.center[0], -self.center[1], -self.center[2])
+
 
 
 
