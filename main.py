@@ -97,16 +97,7 @@ def draw_pyramid(quadric, sierpinski_pyramid):
 
     pygame.display.flip()
 
-def main(levels):
-    initialize()
-
-    quadric = gluNewQuadric()
-    gluQuadricNormals(quadric, GLU_SMOOTH)
-    gluQuadricTexture(quadric, GL_TRUE)
-
-    sierpinski_pyramid = SierpinskiPyramid((0, 1, 0), 1.0, levels)
-
-    # Ładowanie tekstur
+def load_and_enable_textures():
     textures_data = [load_texture(filename) for filename in textures]
     glGenTextures(len(textures_data))
 
@@ -118,16 +109,23 @@ def main(levels):
 
     glEnable(GL_TEXTURE_2D)  # Włączenie obsługi tekstur
 
-    # Dodanie świateł
+def enable_lights():
     glEnable(GL_LIGHTING)
     glEnable(GL_LIGHT0)  # Źródło światła kierunkowe
     glEnable(GL_LIGHT1)  # Źródło światła punktowe
-
-    # Ustawienie świateł
     set_lights()
 
-    clock = pygame.time.Clock()
+def main(levels):
+    initialize()
 
+    quadric = gluNewQuadric()
+    gluQuadricNormals(quadric, GLU_SMOOTH)
+    gluQuadricTexture(quadric, GL_TRUE)
+
+    sierpinski_pyramid = SierpinskiPyramid((0, 1, 0), 1.0, levels)
+    load_and_enable_textures()
+    enable_lights()
+    clock = pygame.time.Clock()
     # Ustawienie powtarzania klawiszy
     pygame.key.set_repeat(50, 10)  # argumenty: opóźnienie, przerwa
 
